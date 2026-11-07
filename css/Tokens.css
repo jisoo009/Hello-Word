@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;700;900&family=IBM+Plex+Mono&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IM+Fell+English:ital@0;1&display=swap');
+
+:root {
+  --color-bg: #0a0807;
+  --color-surface: #17110d;
+  --color-surface-2: #1a1512;
+  --color-surface-3: #2a211a;
+  --color-border: #2a231e;
+  --color-border-strong: #3a312b;
+  --color-paper: #ece5d6;
+
+  --color-text: #e8e0cf;
+  --color-text-sub: #9a9086;
+  --color-text-muted: #6b6058;
+
+  --color-wax: #e9a23b;
+  --color-danger: #d85a44;
+
+  --font-display: 'IM Fell English', serif;
+  --font-heading: 'Hahmlet', serif;
+  --font-body: 'IBM Plex Sans KR', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --sidebar-w: 260px;
+  --topbar-h: 72px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --dur-fast: 150ms;
+  --dur-phase: 600ms;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
