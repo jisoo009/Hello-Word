@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입 · Hello Word</title>
+  <link rel="icon" href="../assets/logo/Favicon.png" />
+  <link rel="stylesheet" href="../css/Reset.css" />
+  <link rel="stylesheet" href="../css/Tokens.css" />
+  <link rel="stylesheet" href="../css/Common.css" />
+  <link rel="stylesheet" href="../css/Auth.css" />
+  <script type="module" src="../js/pages/SignUpPage.js"></script>
+</head>
+<body>
+  <div class="bg-photo" style="--bg: url(../assets/images/BgWhiteHallway.jpg)"></div>
+  <div class="bg-overlay"></div>
+  <div class="fx-vignette"></div>
+
+  <main class="auth-wrap">
+    <section class="auth-card">
+      <img class="auth-logo" src="../assets/logo/LogoHorizontalDark.svg" alt="Hello Word" />
+      <h1 class="auth-title">회원가입</h1>
+
+      <form id="signup-form" class="auth-form" novalidate>
+        <div class="field">
+          <label class="field-label" for="signup-email">이메일</label>
+          <input id="signup-email" class="input" type="email" autocomplete="email" placeholder="you@e-mirim.hs.kr" />
+          <p id="signup-email-msg" class="input-msg"></p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="signup-password">비밀번호</label>
+          <input id="signup-password" class="input" type="password" autocomplete="new-password" placeholder="비밀번호" />
+          <p id="signup-password-msg" class="input-msg">8자 이상, 영문과 숫자를 함께 입력해 주세요.</p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="signup-nickname">닉네임</label>
+          <input id="signup-nickname" class="input" type="text" maxlength="10" placeholder="2~10자" />
+          <p id="signup-nickname-msg" class="input-msg"></p>
+        </div>
+        <button id="signup-submit" type="submit" class="btn btn-wax btn-lg btn-block" disabled>가입하기</button>
+      </form>
+
+      <div class="auth-links">
+        <span>이미 계정이 있나요?</span>
+        <a id="go-login" class="is-wax" href="./LoginPage.html">로그인</a>
+      </div>
+    </section>
+  </main>
+
+  <p class="auth-footer">© 2026 Hello Word</p>
+  <div id="toast-root"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>결과 · Hello Word</title>
+  <link rel="icon" href="../assets/logo/Favicon.png" />
+  <link rel="stylesheet" href="../css/Reset.css" />
+  <link rel="stylesheet" href="../css/Tokens.css" />
+  <link rel="stylesheet" href="../css/Common.css" />
+  <link rel="stylesheet" href="../css/GameOver.css" />
+  <script type="module" src="../js/pages/GameOverPage.js"></script>
+</head>
+<body class="page-result">
+  <div id="result-bg" class="bg-photo" style="--bg: url(../assets/images/BgDarkClassroom.jpg)"></div>
+  <div class="bg-overlay"></div>
+  <div class="fx-vignette"></div>
+
+  <img class="result-logo" src="../assets/logo/LogoHorizontalDark.svg" alt="Hello Word" />
+
+  <main class="result-wrap">
+    <section class="result-card">
+      <span id="result-badge" class="result-badge">결과</span>
+      <h1 id="result-title" class="result-title">불러오는 중…</h1>
+      <div id="result-rounds" class="round-dots"></div>
+
+      <div class="stat-grid">
+        <div class="stat-box"><p>맞힌 단어</p><strong id="result-correct">0 / 4</strong></div>
+        <div class="stat-box"><p>생존 시간</p><strong id="result-survival">00:00</strong></div>
+        <div class="stat-box"><p>최고 기록</p><strong id="result-best">—</strong></div>
+      </div>
+
+      <p id="result-words-title" class="result-words-title"></p>
+      <div id="result-words"></div>
+
+      <div class="result-actions">
+        <button id="go-list" type="button" class="btn btn-ghost btn-lg">단어장 목록</button>
+        <button id="restart" type="button" class="btn btn-wax btn-lg">다시 하기</button>
+      </div>
+    </section>
+  </main>
+  <div id="toast-root"></div>
+</body>
+</html>

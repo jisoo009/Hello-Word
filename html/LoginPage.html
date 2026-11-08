@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인 · Hello Word</title>
+  <link rel="icon" href="../assets/logo/Favicon.png" />
+  <link rel="stylesheet" href="../css/Reset.css" />
+  <link rel="stylesheet" href="../css/Tokens.css" />
+  <link rel="stylesheet" href="../css/Common.css" />
+  <link rel="stylesheet" href="../css/Auth.css" />
+  <script type="module" src="../js/pages/LoginPage.js"></script>
+</head>
+<body>
+  <div class="bg-photo" style="--bg: url(../assets/images/BgDarkClassroom.jpg)"></div>
+  <div class="bg-overlay"></div>
+  <div class="fx-vignette"></div>
+
+  <main class="auth-wrap">
+    <section class="auth-card">
+      <img class="auth-logo" src="../assets/logo/LogoHorizontalDark.svg" alt="Hello Word" />
+      <h1 class="auth-title">로그인</h1>
+
+      <form id="login-form" class="auth-form" novalidate>
+        <div class="field">
+          <label class="field-label" for="login-email">이메일</label>
+          <input id="login-email" class="input" type="email" autocomplete="email" placeholder="you@e-mirim.hs.kr" required />
+        </div>
+        <div class="field" style="margin-top: 14px">
+          <label class="field-label" for="login-password">비밀번호</label>
+          <input id="login-password" class="input" type="password" autocomplete="current-password" placeholder="비밀번호" required />
+        </div>
+        <p id="login-error" class="auth-error"></p>
+        <button id="login-submit" type="submit" class="btn btn-wax btn-lg btn-block">로그인</button>
+      </form>
+
+      <div class="auth-links">
+        <button type="button" id="find-password">비밀번호 찾기</button>
+        <span class="divider"></span>
+        <a id="go-signup" href="./SignUpPage.html">회원가입</a>
+      </div>
+    </section>
+  </main>
+
+  <p class="auth-footer">© 2026 Hello Word</p>
+  <div id="toast-root"></div>
+</body>
+</html>

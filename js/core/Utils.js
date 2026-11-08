@@ -45,16 +45,15 @@ export function isCorrectAnswer(input, meaning) {
 }
 
 export function validateEmail(str) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(str ?? '').trim());
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(str).trim());
 }
 
 export function validatePassword(str) {
-  const pw = String(str ?? '');
-  return pw.length >= 8 && /[A-Za-z]/.test(pw) && /\d/.test(pw);
+  return /^(?=.*[A-Za-z])(?=.*\d).{8,}$/.test(String(str));
 }
 
 export function debounce(fn, ms = 300) {
-  let timer = null;
+  let timer;
   return (...args) => {
     clearTimeout(timer);
     timer = setTimeout(() => fn(...args), ms);
@@ -63,16 +62,14 @@ export function debounce(fn, ms = 300) {
 
 export function shuffle(arr) {
   const copy = [...arr];
-  for (let i = copy.length - 1; i > 0; i--) {
+  for (let i = copy.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
     [copy[i], copy[j]] = [copy[j], copy[i]];
   }
   return copy;
 }
 
-export function clamp(n, min, max) {
-  return Math.min(max, Math.max(min, n));
-}
+export const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
 
 export function percent(part, total) {
   if (!total) return 0;

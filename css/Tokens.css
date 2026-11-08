@@ -14,7 +14,9 @@
   --color-text-muted: #6b6058;
 
   --color-wax: #e9a23b;
+  --color-wax-dark: #1a1208;
   --color-danger: #d85a44;
+  --color-ok: #8fb573;
 
   --font-display: 'IM Fell English', serif;
   --font-heading: 'Hahmlet', serif;
@@ -39,4 +41,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }

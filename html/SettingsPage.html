@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>설정 · Hello Word</title>
+  <link rel="icon" href="../assets/logo/Favicon.png" />
+  <link rel="stylesheet" href="../css/Reset.css" />
+  <link rel="stylesheet" href="../css/Tokens.css" />
+  <link rel="stylesheet" href="../css/Common.css" />
+  <link rel="stylesheet" href="../css/Layout.css" />
+  <link rel="stylesheet" href="../css/Settings.css" />
+  <script type="module" src="../js/pages/SettingsPage.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+      <header id="topbar"></header>
+      <main id="page-content">
+        <h1 class="page-title">설정</h1>
+
+        <section class="settings-group">
+          <h2 class="settings-group-title">게임</h2>
+          <div class="settings-row settings-row-time">
+            <img class="icon settings-icon" src="../assets/icons/IconCandle.svg" alt="" />
+            <div class="settings-text">
+              <p class="settings-label">촛불 제한 시간</p>
+              <p class="settings-desc">촛불이 꺼지기 전에 뜻을 입력해야 해요.</p>
+            </div>
+            <div class="stepper">
+              <button id="time-minus" type="button" class="stepper-btn" aria-label="1초 줄이기">−</button>
+              <p class="stepper-value"><span id="time-value">10</span><small>초</small></p>
+              <button id="time-plus" type="button" class="stepper-btn" aria-label="1초 늘리기">+</button>
+            </div>
+          </div>
+          <div class="time-range-wrap">
+            <input id="time-range" class="range" type="range" min="5" max="30" step="1" value="10" />
+            <div class="range-ticks">
+              <span>5초</span><span>10초</span><span>15초</span><span>20초</span><span>25초</span><span>30초</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-group">
+          <h2 class="settings-group-title">소리</h2>
+          <div class="settings-row">
+            <img class="icon settings-icon" src="../assets/icons/IconMusic.svg" alt="" />
+            <div class="settings-text">
+              <p class="settings-label">배경음</p>
+              <p class="settings-desc">게임 중 흐르는 음악과 ‘무궁화 꽃이 피었습니다’ 음성</p>
+            </div>
+            <input id="bgm-range" class="range range-sm" type="range" min="0" max="100" step="5" />
+            <span id="bgm-value" class="range-value mono">70</span>
+            <button id="bgm-toggle" type="button" class="toggle is-on" aria-label="배경음 켜기/끄기"><span></span></button>
+          </div>
+          <div class="settings-divider"></div>
+          <div class="settings-row">
+            <img class="icon settings-icon" src="../assets/icons/IconVolume.svg" alt="" />
+            <div class="settings-text">
+              <p class="settings-label">효과음</p>
+              <p class="settings-desc">촛불, 정답, 귀신이 나타날 때 나는 소리</p>
+            </div>
+            <input id="sfx-range" class="range range-sm" type="range" min="0" max="100" step="5" />
+            <span id="sfx-value" class="range-value mono">85</span>
+            <button id="sfx-toggle" type="button" class="toggle is-on" aria-label="효과음 켜기/끄기"><span></span></button>
+          </div>
+        </section>
+
+        <div class="settings-actions">
+          <button id="settings-cancel" type="button" class="btn btn-ghost">취소</button>
+          <button id="settings-save" type="button" class="btn btn-wax">저장</button>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div id="toast-root"></div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>단어장 학습 · Hello Word</title>
+  <link rel="icon" href="../assets/logo/Favicon.png" />
+  <link rel="stylesheet" href="../css/Reset.css" />
+  <link rel="stylesheet" href="../css/Tokens.css" />
+  <link rel="stylesheet" href="../css/Common.css" />
+  <link rel="stylesheet" href="../css/Layout.css" />
+  <link rel="stylesheet" href="../css/Wordbook.css" />
+  <script type="module" src="../js/pages/WordbookStudyPage.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+      <header id="topbar"></header>
+      <main id="page-content">
+        <nav class="breadcrumb">
+          <a href="./WordbookListPage.html">단어장</a>
+          <img class="icon icon-sm" src="../assets/icons/IconChevronRight.svg" alt="" />
+          <span id="breadcrumb-title"></span>
+        </nav>
+
+        <div class="study-head">
+          <div>
+            <h1 id="study-title" class="page-title">불러오는 중…</h1>
+            <p id="study-meta" class="study-meta"></p>
+          </div>
+          <div class="study-head-actions">
+            <button id="open-manage" type="button" class="btn btn-ghost">단어 관리</button>
+            <button id="study-start-game" type="button" class="btn btn-wax">게임 시작</button>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <button id="tab-card" type="button" class="tab is-active" data-tab="card">카드 학습</button>
+          <button id="tab-list" type="button" class="tab" data-tab="list">단어 목록</button>
+        </div>
+
+        <section id="panel-card" class="study-layout">
+          <div class="study-main">
+            <div id="study-empty" class="empty-state is-hidden">
+              아직 단어가 없어요. <button type="button" class="btn-text is-wax" id="empty-add">단어 관리</button>에서 추가해 보세요.
+            </div>
+
+            <div id="card-area">
+              <div class="card-stack">
+                <div class="card-stack-back back-2"></div>
+                <div class="card-stack-back back-1"></div>
+                <button id="flashcard" type="button" class="flashcard">
+                  <span class="flashcard-glow"></span>
+                  <span id="card-index" class="card-index mono">0 / 0</span>
+                  <span id="card-speak" class="card-speak" role="button" title="발음 듣기">
+                    <img class="icon icon-lg" src="../assets/icons/IconSpeaker.svg" alt="" />
+                  </span>
+                  <span class="flashcard-front">
+                    <span id="card-term" class="card-term"></span>
+                    <span id="card-phonetic" class="card-phonetic"></span>
+                  </span>
+                  <span class="flashcard-back">
+                    <span id="card-meaning" class="card-meaning"></span>
+                  </span>
+                  <span class="card-hint">
+                    <img class="icon icon-sm" src="../assets/icons/IconFlip.svg" alt="" />
+                    <span id="card-hint-text">카드를 누르면 뜻이 보여요</span>
+                  </span>
+                </button>
+              </div>
+
+              <div class="study-controls">
+                <button id="btn-prev" type="button" class="round-btn" title="이전">
+                  <img class="icon icon-lg" src="../assets/icons/IconArrowLeft.svg" alt="" />
+                </button>
+                <button id="btn-unknown" type="button" class="btn btn-ghost btn-lg study-choice">모르겠어요</button>
+                <button id="btn-known" type="button" class="btn btn-wax btn-lg study-choice">외웠어요</button>
+                <button id="btn-next" type="button" class="round-btn" title="다음">
+                  <img class="icon icon-lg" src="../assets/icons/IconArrowRight.svg" alt="" />
+                </button>
+              </div>
+
+              <div class="memorized">
+                <div class="memorized-head">
+                  <span>외운 단어</span>
+                  <span id="memorized-text" class="mono">0 / 0</span>
+                </div>
+                <div class="progress progress-thick"><div id="memorized-bar" class="progress-fill"></div></div>
+                <p class="study-key-hint">← → 키로 넘기고, 스페이스바로 카드를 뒤집을 수 있어요.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="study-status">
+            <div class="study-status-head">
+              <h2>학습 현황</h2>
+              <button id="btn-shuffle" type="button" class="icon-btn" title="섞기">
+                <img class="icon" src="../assets/icons/IconShuffle.svg" alt="" />
+              </button>
+            </div>
+            <div class="stat-grid">
+              <div class="stat-box"><p>외웠어요</p><strong id="stat-known" class="is-wax">0</strong></div>
+              <div class="stat-box"><p>모르겠어요</p><strong id="stat-unknown" class="is-danger">0</strong></div>
+              <div class="stat-box"><p>남은 단어</p><strong id="stat-left">0</strong></div>
+            </div>
+            <p class="unknown-head">모르는 단어 <span id="unknown-count" class="is-danger mono">0</span></p>
+            <ul id="unknown-list" class="unknown-list"></ul>
+            <button id="btn-review-unknown" type="button" class="btn btn-ghost-wax btn-block">모르는 단어만 다시 보기</button>
+          </aside>
+        </section>
+
+        <section id="panel-list" class="is-hidden">
+          <table id="word-table" class="word-table">
+            <thead>
+              <tr><th>#</th><th>영단어</th><th>뜻</th><th>상태</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+</body>
+</html>

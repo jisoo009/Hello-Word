@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>게임 · Hello Word</title>
+  <link rel="icon" href="../assets/logo/Favicon.png" />
+  <link rel="stylesheet" href="../css/Reset.css" />
+  <link rel="stylesheet" href="../css/Tokens.css" />
+  <link rel="stylesheet" href="../css/Common.css" />
+  <link rel="stylesheet" href="../css/Game.css" />
+  <script type="module" src="../js/pages/GamePage.js"></script>
+</head>
+<body class="page-game">
+  <div id="game-root" data-state="ready">
+    <div class="game-bg game-bg-dark"></div>
+    <div class="game-bg game-bg-white"></div>
+    <div class="game-overlay"></div>
+    <div class="game-vignette"></div>
+
+    <section class="game-screen screen-ready">
+      <img class="game-logo" src="../assets/logo/LogoHorizontalDark.svg" alt="Hello Word" />
+      <div class="ready-card">
+        <p class="ready-label">게임 준비</p>
+        <h1 id="ready-title" class="ready-title">불러오는 중…</h1>
+        <div class="ready-meta">
+          <span><img class="icon icon-sm" src="../assets/icons/IconFlag.svg" alt="" />4라운드</span>
+          <span><img class="icon icon-sm" src="../assets/icons/IconClock.svg" alt="" /><span id="ready-time">제한 시간 10초</span></span>
+          <span><img class="icon icon-sm" src="../assets/icons/IconBook.svg" alt="" /><span id="ready-count">0단어</span></span>
+        </div>
+        <div class="ready-divider"></div>
+        <p class="ready-sub">게임 방법</p>
+        <ol class="rule-list">
+          <li><span>1</span>촛불이 켜져 있는 동안 단어의 뜻을 입력하세요.</li>
+          <li><span>2</span>‘무궁화 꽃이 피었습니다’가 끝나면 2초 동안 입력할 수 없어요.</li>
+          <li><span>3</span>틀리면 게임이 끝나요. 4라운드를 버티면 성공이에요.</li>
+        </ol>
+        <p id="ready-warning" class="ready-warning is-hidden"></p>
+        <div class="ready-actions">
+          <button id="ready-cancel" type="button" class="btn btn-ghost btn-lg">취소</button>
+          <button id="ready-start" type="button" class="btn btn-wax btn-lg" disabled>게임 시작</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-screen screen-play">
+      <div class="round-indicator">
+        <div>
+          <p class="round-label">ROUND</p>
+          <p id="round-text" class="round-text">01 / 04</p>
+        </div>
+        <div id="round-candles" class="round-candles"></div>
+      </div>
+
+      <div id="chant-track" class="chant-track"></div>
+
+      <p class="time-left"><span id="time-left">10</span><small>초</small></p>
+
+      <p id="word-term" class="word-term"></p>
+
+      <div class="answer-wrap">
+        <input id="answer-input" class="answer-input" type="text" autocomplete="off" spellcheck="false" placeholder="뜻을 입력하세요" />
+        <span id="lock-badge" class="lock-badge">🔒 입력 잠김</span>
+        <div class="lock-track"><div id="lock-bar" class="lock-bar"></div></div>
+      </div>
+    </section>
+
+    <section class="game-screen screen-correct">
+      <div class="correct-card">
+        <p class="correct-label">정답</p>
+        <p id="correct-term" class="correct-term"></p>
+        <p id="correct-meaning" class="correct-meaning"></p>
+        <div class="correct-divider"></div>
+        <div class="correct-foot">
+          <div id="correct-dots" class="round-dots"></div>
+          <p><span id="correct-countdown">3</span>초 후 다음 라운드</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="jumpscare-layer" class="game-screen screen-jumpscare">
+      <img id="jumpscare-img" class="jumpscare-img" src="../assets/images/JumpscareFace.jpg" alt="" />
+      <span class="glitch g1"></span><span class="glitch g2"></span><span class="glitch g3"></span>
+      <span class="glitch g4"></span><span class="glitch g5"></span>
+    </section>
+  </div>
+  <div id="toast-root"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>단어장 · Hello Word</title>
+  <link rel="icon" href="../assets/logo/Favicon.png" />
+  <link rel="stylesheet" href="../css/Reset.css" />
+  <link rel="stylesheet" href="../css/Tokens.css" />
+  <link rel="stylesheet" href="../css/Common.css" />
+  <link rel="stylesheet" href="../css/Layout.css" />
+  <link rel="stylesheet" href="../css/Wordbook.css" />
+  <script type="module" src="../js/pages/WordbookListPage.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+      <header id="topbar"></header>
+      <main id="page-content">
+        <div class="list-head">
+          <div class="list-head-left">
+            <h1 class="page-title">단어장</h1>
+            <span id="wordbook-count" class="count-badge">0</span>
+          </div>
+          <div class="sort-tabs">
+            <button id="sort-recent" type="button" class="sort-tab is-active" data-sort="recent">최근 학습순</button>
+            <span class="sort-divider"></span>
+            <button id="sort-name" type="button" class="sort-tab" data-sort="name">이름순</button>
+          </div>
+        </div>
+
+        <ul id="wordbook-list" class="wb-list"></ul>
+        <p id="wordbook-empty" class="empty-state is-hidden"></p>
+      </main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+</body>
+</html>

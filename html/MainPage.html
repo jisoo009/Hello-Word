@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홈 · Hello Word</title>
+  <link rel="icon" href="../assets/logo/Favicon.png" />
+  <link rel="stylesheet" href="../css/Reset.css" />
+  <link rel="stylesheet" href="../css/Tokens.css" />
+  <link rel="stylesheet" href="../css/Common.css" />
+  <link rel="stylesheet" href="../css/Layout.css" />
+  <link rel="stylesheet" href="../css/Main.css" />
+  <script type="module" src="../js/pages/MainPage.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside id="sidebar"></aside>
+    <div class="app-main">
+      <header id="topbar"></header>
+      <main id="page-content">
+        <h1 id="greeting" class="page-title">안녕하세요</h1>
+
+        <section id="recent-card" class="recent-card">
+          <div class="recent-body">
+            <p class="recent-label">이어서 학습하기</p>
+            <h2 id="recent-title" class="recent-title">불러오는 중…</h2>
+            <p id="recent-meta" class="recent-meta"></p>
+            <p class="recent-label recent-best-label">최고 생존 시간</p>
+            <p id="recent-best" class="recent-best">—</p>
+            <button id="recent-start" type="button" class="btn btn-wax btn-lg">게임 시작</button>
+          </div>
+          <div class="recent-photo" aria-hidden="true"></div>
+        </section>
+
+        <div class="section-head">
+          <h2 class="section-title">내 단어장</h2>
+          <a id="see-all" class="see-all" href="./WordbookListPage.html">전체 보기 →</a>
+        </div>
+        <div id="home-wordbook-grid" class="home-grid"></div>
+      </main>
+    </div>
+  </div>
+  <div id="toast-root"></div>
+</body>
+</html>
